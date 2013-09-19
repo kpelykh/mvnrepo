@@ -1,6 +1,6 @@
 mvnrepo
 =======
-
+```
 <distributionManagement>
     <repository>
         <id>github-repo</id>
@@ -11,3 +11,4 @@ mvnrepo
         <url>https://github.com/kpelykh/mvnrepo/raw/master/snapshots</url>
     </snapshotRepository>
 </distributionManagement>
+```

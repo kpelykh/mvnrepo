@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.ops4j.pax.exam</groupId>
+  <artifactId>pax-exam-container-weld</artifactId>
+  <versioning>
+    <release>3.4.0-kp</release>
+    <versions>
+      <version>3.4.0-kp</version>
+    </versions>
+    <lastUpdated>20131012064353</lastUpdated>
+  </versioning>
+</metadata>

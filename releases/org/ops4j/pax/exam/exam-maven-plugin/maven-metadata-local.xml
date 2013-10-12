@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.ops4j.pax.exam</groupId>
+  <artifactId>exam-maven-plugin</artifactId>
+  <versioning>
+    <latest>3.4.0-kp</latest>
+    <release>3.4.0-kp</release>
+    <versions>
+      <version>3.4.0-kp</version>
+    </versions>
+    <lastUpdated>20131012064400</lastUpdated>
+  </versioning>
+</metadata>

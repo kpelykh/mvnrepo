@@ -3,10 +3,10 @@
   <groupId>org.ops4j.pax</groupId>
   <artifactId>exam-reactor</artifactId>
   <versioning>
-    <release>3.1.1-kp</release>
+    <release>3.4.0-kp</release>
     <versions>
-      <version>3.1.1-kp</version>
+      <version>3.4.0-kp</version>
     </versions>
-    <lastUpdated>20131012070718</lastUpdated>
+    <lastUpdated>20131012071704</lastUpdated>
   </versioning>
 </metadata>

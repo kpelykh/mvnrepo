@@ -1,4 +1,5 @@
 #NOTE: This is an internal implementation file, its format can be changed without prior notice.
-#Fri Oct 11 23:43:41 PDT 2013
+#Sat Oct 12 00:17:27 PDT 2013
 pax-exam-sample1-web-3.4.0-kp.pom>=
 pax-exam-sample1-web-3.4.0-kp.war>=
+pax-exam-sample1-web-3.4.0-kp-sources.jar>=

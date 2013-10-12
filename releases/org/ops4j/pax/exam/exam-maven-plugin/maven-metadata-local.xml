@@ -3,11 +3,11 @@
   <groupId>org.ops4j.pax.exam</groupId>
   <artifactId>exam-maven-plugin</artifactId>
   <versioning>
-    <latest>3.4.0-kp</latest>
-    <release>3.4.0-kp</release>
+    <latest>3.1.1-kp</latest>
+    <release>3.1.1-kp</release>
     <versions>
-      <version>3.4.0-kp</version>
+      <version>3.1.1-kp</version>
     </versions>
-    <lastUpdated>20131012064400</lastUpdated>
+    <lastUpdated>20131012070759</lastUpdated>
   </versioning>
 </metadata>

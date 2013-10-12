@@ -3,10 +3,10 @@
   <groupId>org.ops4j.pax.exam</groupId>
   <artifactId>pax-exam-cm</artifactId>
   <versioning>
-    <release>3.4.0-kp</release>
+    <release>3.1.1-kp</release>
     <versions>
-      <version>3.4.0-kp</version>
+      <version>3.1.1-kp</version>
     </versions>
-    <lastUpdated>20131012064334</lastUpdated>
+    <lastUpdated>20131012070733</lastUpdated>
   </versioning>
 </metadata>

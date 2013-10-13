@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.ops4j.pax</groupId>
+    <artifactId>logging</artifactId>
+    <version>1.7.2-kp</version>
+  </parent>
+
+  <groupId>org.ops4j.pax.logging</groupId>
+  <artifactId>pax-logging-samples</artifactId>
+  <packaging>pom</packaging>
+
+  <name>OPS4J Pax Logging - Samples (Build POM)</name>
+  <description>
+    Pax Logging Samples
+  </description>
+
+  <modules>
+    <module>config</module>
+    <module>logger</module>
+    <module>fragment</module>
+    <module>dynamic</module>
+  </modules>
+
+  <profiles>
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+  
+</project>

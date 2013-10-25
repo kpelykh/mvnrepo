@@ -1,0 +1,129 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.ops4j</groupId>
+        <artifactId>master</artifactId>
+        <version>3.2.0</version>
+    </parent>
+
+    <groupId>org.ops4j.pax</groupId>
+    <artifactId>exam-reactor</artifactId>
+    <version>3.4.0-kp</version>
+    <packaging>pom</packaging>
+
+    <name>OPS4J Pax Exam (Reactor POM)</name>
+
+    <profiles>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>build/pax-exam-checkstyle-rules</module>
+                <module>pom</module>
+                <module>core/pax-exam</module>
+                <module>core/pax-exam-spi</module>
+                <module>core/pax-exam-extender-service</module>
+                <module>core/pax-exam-inject</module>
+                <module>core/pax-exam-invoker-junit</module>
+                <module>core/pax-exam-invoker-servlet</module>
+                <module>core/pax-exam-servlet-bridge</module>
+                <module>core/pax-exam-cdi</module>
+                <module>core/pax-exam-spring</module>
+                <module>core/pax-exam-cm</module>
+                <module>forge/pax-exam-testforge</module>
+                <module>drivers/pax-exam-player</module>
+                <module>drivers/pax-exam-junit4</module>
+                <module>drivers/pax-exam-testng</module>
+                <module>drivers/pax-exam-testng-servlet-bridge</module>
+
+                <module>core/pax-exam-link-mvn</module>
+                <module>core/pax-exam-link-assembly</module>
+                <module>core/pax-exam-container-rbc</module>
+                <module>core/pax-exam-container-rbc-client</module>
+                
+                <module>samples</module>
+
+                <module>containers/pax-exam-container-native</module>
+                <module>containers/pax-exam-container-remote</module>
+                <module>containers/pax-exam-container-forked</module>
+                <module>containers/pax-exam-container-glassfish</module>
+                <module>containers/pax-exam-container-glassfish-embedded</module>
+                <module>containers/pax-exam-container-weld</module>
+                <module>containers/pax-exam-container-openwebbeans</module>
+                <module>containers/pax-exam-container-jboss</module>
+                <module>containers/pax-exam-container-jboss72</module>
+                <module>containers/pax-exam-container-resin</module>
+                <module>containers/pax-exam-container-candi</module>
+                <module>containers/pax-exam-container-tomcat</module>
+                <module>containers/pax-exam-container-tomee</module>
+                <module>containers/pax-exam-container-karaf</module>
+                <module>containers/pax-exam-container-wildfly80</module>
+
+                <module>maven/exam-maven-plugin</module>
+
+            </modules>
+        </profile>
+        <profile>
+            <id>itest</id>
+            <modules>
+                <module>pom</module>
+                <module>itest</module>
+            </modules>
+        </profile>
+    </profiles>
+
+    <scm>
+        <connection>scm:git:git@github.com:ops4j/org.ops4j.pax.exam2.git</connection>
+        <developerConnection>scm:git:git@github.com:ops4j/org.ops4j.pax.exam2.git</developerConnection>
+        <url>git@github.com:ops4j/org.ops4j.pax.exam2.git</url>
+      <tag>HEAD</tag>
+  </scm>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <aggregate>true</aggregate>
+                    <docletArtifact>
+                        <groupId>com.google.doclava</groupId>
+                        <artifactId>doclava</artifactId>
+                        <version>1.0.5</version>
+                    </docletArtifact>
+                    <doclet>com.google.doclava.Doclava</doclet>
+                    <!-- | bootclasspath required by Sun's JVM -->
+                    <bootclasspath>${sun.boot.class.path}</bootclasspath>
+                    <additionalparam>
+                        -quiet
+                        <!-- -federate JDK http://download.oracle.com/javase/6/docs/api/index.html? 
+                            -federationxml JDK http://doclava.googlecode.com/svn/static/api/openjdk-6.xml -->
+                        -hdf project.name "${project.name}"
+                        -d
+                        ${project.build.directory}/apidocs
+                    </additionalparam>
+                    <useStandardDocletOptions>false</useStandardDocletOptions>
+                    <!-- | Apple's JVM sometimes requires more memory -->
+                    <additionalJOption>-J-Xmx1024m</additionalJOption>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -3,10 +3,10 @@
   <groupId>org.ops4j.pax.logging</groupId>
   <artifactId>pax-logging-logback</artifactId>
   <versioning>
-    <release>1.7.2</release>
+    <release>1.7.2-kp</release>
     <versions>
-      <version>1.7.2</version>
+      <version>1.7.2-kp</version>
     </versions>
-    <lastUpdated>20131011223202</lastUpdated>
+    <lastUpdated>20131013071359</lastUpdated>
   </versioning>
 </metadata>

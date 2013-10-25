@@ -1,0 +1,5 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Sun Oct 13 00:13:59 PDT 2013
+pax-logging-logback-1.7.2-kp.pom>=
+pax-logging-logback-1.7.2-kp-sources.jar>=
+pax-logging-logback-1.7.2-kp.jar>=

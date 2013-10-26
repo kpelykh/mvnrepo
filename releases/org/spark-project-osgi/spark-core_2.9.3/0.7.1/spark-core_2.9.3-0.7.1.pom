@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.spark-project-osgi</groupId>
+    <artifactId>spark-osgi</artifactId>
+    <version>0.7.1</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+  
+  <artifactId>spark-core_${scala.version}</artifactId>
+  <name>spark-core</name>
+  <description>OSGi-fied version of spark-core.</description>  
+  <packaging>bundle</packaging>
+
+  <dependencies>
+    <dependency>
+        <groupId>org.spark-project</groupId>
+        <artifactId>spark-core_${scala.version}</artifactId>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <configuration>
+          <instructions>
+            <Export-Package>spark.*;version=${project.version},spark.api.examples.*;version=${project.version}</Export-Package>
+            <Import-Package>!sun.misc,org.apache.hadoop.mapred.*;resolution:=optional,org.apache.hadoop.mapreduce.*;resolution:=optional</Import-Package>
+            <DynamicImport-Package>*</DynamicImport-Package>            
+            <Embed-Dependency>*;inline=true</Embed-Dependency>
+            <_nouses>false</_nouses>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

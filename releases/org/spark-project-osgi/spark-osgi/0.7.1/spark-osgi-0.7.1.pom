@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.spark-project-osgi</groupId>
+  <artifactId>spark-osgi</artifactId>
+  <name>spark-osgi</name>
+  <description>Root for OSGi-fied Spark and Shark libraries.</description>
+  <version>0.7.1</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <scala.version>2.9.3</scala.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <modules>
+    <module>spark-core</module>
+    <module>spark-repl</module>
+    <module>spark-bagel</module> 
+    <module>shark</module>       
+  </modules>
+
+  
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+          <groupId>org.spark-project</groupId>
+          <artifactId>spark-core_${scala.version}</artifactId>
+          <version>${project.version}</version>
+          <scope>provided</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.spark-project</groupId>
+          <artifactId>spark-repl_${scala.version}</artifactId>
+          <version>${project.version}</version>
+          <scope>provided</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.spark-project</groupId>
+          <artifactId>spark-bagel_${scala.version}</artifactId>
+          <version>${project.version}</version>
+          <scope>provided</scope>
+      </dependency>
+      <dependency>
+          <groupId>edu.berkeley.cs.amplab</groupId>
+          <artifactId>shark_${scala.version}</artifactId>
+          <version>${project.version}</version>
+          <scope>provided</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>2.3.7</version>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Bundle-RequiredExecutionEnvironment>J2SE-1.5</Bundle-RequiredExecutionEnvironment>
+            <Import-Package>!sun.misc,*</Import-Package>
+            <Ignore-Package>sun.misc</Ignore-Package>
+            <_versionpolicy>[$(@),$(version;=+;$(@)))</_versionpolicy>
+          </instructions>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <encoding>${project.build.sourceEncoding}</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
